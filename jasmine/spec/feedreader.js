@@ -82,7 +82,7 @@ $(function() {
             }
          });
     });
-    /* TODO: Write a new test suite named "Initial Entries" */
+    /* test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -100,12 +100,16 @@ $(function() {
             expect($('.feed').children().length).toBeGreaterThan(0);
             done();
          });
-         /* TODO: Write a new test suite named "New Feed Selection" */
+
+         /* test suite named "New Feed Selection" */
+         // nest the new feed selectiont inside the initial entries suite
+         // to ensure 2 async calls are done before the expect run
         describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
             var content0;
             beforeEach(function(done) {
                 content0 = $('.feed').children().text();
